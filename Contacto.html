@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Yelina Suplementos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="menu container">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo1.png" alt="Yelina Suplementos" class="logo-img" />
+        </a>
+
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+            <img src="imagenes/hamburguesa.png" class="menu-icono" alt="menú" />
+        </label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header">
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="imagenes/central.jpeg" alt="Contacto Yelina" />
+            </div>
+            <div class="header-txt">
+                <h1>Contacto</h1>
+                <p>¿Tienes preguntas? ¡Nos encantaría escucharte!</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="formulario container">
+        <h2>Envíanos un mensaje</h2>
+        <p>Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+        
+        <form action="gracias.html" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" />
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required />
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+    </section>
+
+    <section class="formulario container">
+        <h2>Información de contacto</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <h3>Dirección</h3>
+                <p>Calle Programación Web N° 20, Lima, Perú</p>
+            </div>
+            <div class="info-item">
+                <h3>Teléfono</h3>
+                <p>051-999999999</p>
+            </div>
+            <div class="info-item">
+                <h3>Correo electrónico</h3>
+                <p>contacto@yelinasuplementos.com</p>
+            </div>
+            <div class="info-item">
+                <h3>Horario de atención</h3>
+                <p>Lunes a viernes: 9:00 a.m. - 5:00 p.m.</p>
+                <p>Sábados: 10:00 a.m. - 2:00 p.m.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="formulario container">
+        <h2>Redes sociales</h2>
+        <p>Síguenos en nuestras redes sociales para estar enterado de nuestras últimas promociones y actualizaciones:</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#">Aviso legal</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Extras</h3>
+                <ul>
+                    <li><a href="#">Aminoácidos</a></li>
+                    <li><a href="#">Grasas</a></li>
+                    <li><a href="#">Carbohidratos</a></li>
+                    <li><a href="#">Geles</a></li>
+                </ul>
+            </div>
+            <div class="contacto1">
+                <h3 class="web12">Datos de contacto</h3>
+                <ul>
+                    <li><strong>Dirección:</strong> Calle Programación Web N° 20</li>
+                    <li><strong>Ciudad:</strong> Lima</li>
+                    <li><strong>Horario:</strong> De 9:00 a.m. a 5:00 p.m.</li>
+                    <li><strong>Teléfono:</strong> 051-999999999</li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Enlaces de interés</h3>
+                <ul>
+                    <li><a href="#">Colabora con nosotros</a></li>
+                    <li><a href="#">Entrenador personal</a></li>
+                    <li><a href="#">Nutricionista</a></li>
+                    <li><a href="#">Endocrinólogo</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

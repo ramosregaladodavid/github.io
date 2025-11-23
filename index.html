@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelina Suplementos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="menu container">
+    <a href="index.html" class="logo">
+<img src="imagenes/logo1.png" alt="Yelina Suplementos" class="logo-img">
+</a>
+
+<input type="checkbox" id="menu"/>
+<label for="menu">
+    <img src="imagenes/hamburguesa.png" class="menu-icono" alt="proteina">
+</label>
+
+<nav class="navbar">
+<ul>
+    <li> <a href="Promociones.html" target="_blank">Promociones</a></li>
+    <li> <a href="Nosotros.html" target="_blank">Nosotros</a></li>
+    <li> <a href="Productos.html" target="_blank">Productos</a></li>
+    <li> <a href="Contacto.html" target="_blank">Contacto</a></li>
+</ul>
+</nav>
+
+    <div>
+        <ul>
+            <li class="submenu">
+                <img src="imagenes/carritopeque.png" id="img-carrito" alt="carrito">
+                <div id="carrito">
+                    <table id="lista-carrito">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                    <p id="total-carrito" style="color: yellow; font-weight: bold; font-size: 18px; margin-top: 10px;">
+                        Total: S/ 0.00
+                    </p>
+                    <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="cinta-yelina">
+<p>TIENDA ONLINE: YELINA SUPLEMENTOS</p>
+</div>
+
+<header class="header">
+<div class="header-content container">
+<div class="header-img">
+<img src="imagenes/central.jpeg" alt="foto-hombre">
+</div>
+
+<div class="header-txt">
+<h1>Ofertas Especiales</h1>
+<p>Consume los mejores suplementos</p>
+<a href="#" class="btn-1">Ofertas por inauguración</a>
+</div>
+</div>
+</header>
+
+<section class="ofert-carousel-wrapper">
+    <div class="ofert-carousel container">
+        <div class="ofert-track" id="ofertTrack">
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="imagenes/concentrada333.png" alt="Proteína concentrada">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Proteína Whey Concentrada 1kg</h3>
+                    <p>Proteína de alta calidad para recuperación muscular y desarrollo magro. Ideal para uso diario</p>
+                    <a href="productos/producto.html?id=1" onclick="abrirVentanaProducto(this.href); return false;" class="btn-2">Detalles</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="imagenes/aislada2.png" alt="Proteína aislada">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Proteína Whey Aislada 1kg</h3>
+                    <p>Fórmula ultra filtrada, baja en lactosa y carbohidratos. Perfecta para definición muscular</p>
+                    <a href="productos/producto.html?id=2" onclick="abrirVentanaProducto(this.href); return false;" class="btn-2">Detalles</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="imagenes/hidrolizada2_.jpg" alt="Proteína hidrolizada">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Proteína Whey Hidrolizada 1kg</h3>
+                    <p>Absorción rápida para recuperación post-entreno. Ideal para atletas exigentes</p>
+                    <a href="productos/producto.html?id=3" onclick="abrirVentanaProducto(this.href); return false;" class="btn-2">Detalles</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="imagenes/creatina2.png" alt="Creatina">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Creatina Monohidratada 300g</h3>
+                    <p>Aumenta fuerza, potencia y volumen muscular. Ideal para entrenamientos intensos</p>
+                    <a href="productos/producto.html?id=4" onclick="abrirVentanaProducto(this.href); return false;" class="btn-2">Detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="ofert-btn-prev" id="ofertPrev">❮</button>
+    <button class="ofert-btn-next" id="ofertNext">❯</button>
+</section>
+
+<div class="filtro-buscador-wrapper">
+<input type="text" id="buscador" placeholder="Buscar suplemento..." class="formulario-input">
+
+<select id="filtroTipo" class="formulario-input">
+    <option value="">Categorías</option>
+    <option value="proteina">Proteína</option>
+    <option value="creatina">Creatina</option>
+    <option value="vitamina">Vitamina</option>
+    <option value="colageno">Colágeno</option>
+</select>
+</div>
+
+<main class="products container" id="lista-1">
+<h2>Productos</h2>
+
+<div class="grupo-1 product-content">
+
+<div class="product">
+<img src="imagenes/concentrada333.png" alt="proteinaconcentrada">
+<div class="product-txt">
+    <h3>Proteina Whey Concentrada 1kg</h3>
+    <p>Proteína de alta calidad para recuperación muscular y desarrollo magro. Ideal para uso diario</p>
+    <a href="productos/producto.html?id=1"  onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 130.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/aislada2.png" alt="proteinaaislada">
+<div class="product-txt">
+    <h3>Poteina Whey Aislada 1Kg</h3>
+    <p>Fórmula ultra filtrada, baja en lactosa y carbohidratos. Perfecta para definición muscular</p>
+    <a href="productos/producto.html?id=2" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 180.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/hidrolizada2_.jpg" alt="proteinahidrolizada">
+<div class="product-txt">
+    <h3>Proteina Whey Hidrolizada 1kg</h3>
+    <p>Absorción rápida para recuperación post-entreno. Ideal para atletas exigentes</p>
+    <a href="productos/producto.html?id=3" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 200.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/creatina2.png" alt="creatina">
+<div class="product-txt">
+    <h3>Creatina Monohidratada 300 g</h3>
+    <p>Aumenta fuerza, potencia y volumen muscular. Ideal para entrenamientos intensos</p>
+    <a href="productos/producto.html?id=4" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 90.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/glutamina2_.jpg" alt="glutamina">
+<div class="product-txt">
+    <h3>Glutamina Micronizada 300 g</h3>
+    <p>Apoya la recuperación muscular y la salud intestinal. Uso recomendado post-entreno</p>
+    <a href="productos/producto.html?id=5" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 110.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/preentreno2.jpeg" alt="preentreno">
+<div class="product-txt">
+    <h3>Preentreno energizante 300 g</h3>
+    <p>Con cafeína, beta-alanina y citrulina. Mejora el enfoque y la resistencia</p>
+    <a href="productos/producto.html?id=6" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 95.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+</div>
+</div>
+</div>
+
+<div class="grupo-2 product-content" style="display: none;">
+
+<div class="product">
+<img src="imagenes/multi-vitaminas-60-capsulas.jpg" alt="vitamina">
+<div class="product-txt">
+    <h3>Multivitaminico 60 cápsulas</h3>
+    <p>Vitaminas y minerales esenciales para energía, inmunidad y bienestar general</p>
+    <a href="productos/producto.html?id=7" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 60.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/quemado222.png" alt="quemador">
+<div class="product-txt">
+    <h3>Quemador de grasa 90 cápsulas</h3>
+    <p>Termogénico natural con té verde y L-carnitina. Apoya la pérdida de grasa</p>
+    <a href="productos/producto.html?id=8" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 85.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/maca2.png" alt="maca">
+<div class="product-txt">
+    <h3>Maca plus 120 cápsulas</h3>
+    <p>Maca negra y roja para energía, vitalidad y equilibrio hormonal</p>
+    <a href="productos/producto.html?id=9" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 75.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/colageno2_.jpg" alt="colageno">
+<div class="product-txt">
+    <h3>Colageno Hidrolizado 300 g</h3>
+    <p>Fortalece articulaciones, piel y cabello. Enriquecido con vitamina C</p>
+    <a href="productos/producto.html?id=10" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 95.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/omega32_.jpg" alt="omega3">
+<div class="product-txt">
+    <h3>Omega 3 90 cápsulas</h3>
+    <p>Ácidos grasos esenciales para salud cardiovascular y cerebral</p>
+    <a href="productos/producto.html?id=11" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 80.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/ashwana2_.jpg" alt="ashwagandha">
+<div class="product-txt">
+    <h3>Ashwagandha 60 cápsulas</h3>
+    <p>Adaptógeno natural que reduce el estrés y mejora el sueño</p>
+    <a href="productos/producto.html?id=12" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 70.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>
+</div>
+</div>
+</div>
+
+<div class="grupo-3 product-content" style="display: none;">
+<div class="product">
+<img src="imagenes/MagnesioQ_2.jpg" alt="magnesio">
+<div class="product-txt">
+    <h3>Magnesio quelado 60 cápsulas</h3>
+    <p>Mejora la función muscular, el sueño y el sistema nervioso</p>
+    <a href="productos/producto.html?id=13" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 55.00</p>
+    <a href="#" class="agregar-carrito btn-3" data-id="13">Agregar al carrito</a>
+</div>
+</div>
+
+<div class="product">
+<img src="imagenes/bcc2.jpg" alt="bcca">
+<div class="product-txt">
+    <h3>BCCA 2:1:1 saborizado 360 g</h3>
+    <p>Aminoácidos esenciales para evitar el catabolismo muscular y mejorar la recuperación</p>
+    <a href="productos/producto.html?id=14" onclick="abrirVentanaProducto(this.href); return false;" class="btn-3" target="_blank">Detalles</a>
+    <p class="precio">S/ 95.00</p>
+    <a href="#" class="agregar-carrito btn-2" data-id="14">Agregar al carrito</a>
+</div>
+</div>
+</div>
+
+<div class="botones-paginacion">
+    <button id="verGrupo1" class="btn-1">Página 1</button>
+    <button id="verGrupo2" class="btn-1">Pagina 2</button>
+    <button id="verGrupo3" class="btn-1">Página 3</button>
+</div>
+
+
+</main>
+
+<section class="icons container">
+
+    <div class="icon-1">
+    <img src="imagenes/mancuerna.png" alt="">
+    <h3>Mancuernas de todos materiales y pesos</h3>
+    <p>Tenemos mancuernas desde 1 kg hasta 50 kg, fabricadas en distintos materiales como hierro fundido, vinilo, caucho y neopreno. Ideales para todo tipo de entrenamiento, desde principiantes hasta atletas avanzados. Ofrecemos entrega a domicilio en todo el Perú, con promociones por compras al por mayor y asesoría personalizada para elegir el peso ideal según tus objetivos.</p>
+    </div>
+
+    <div class="icon-1">
+    <img src="imagenes/jaula.png" alt="">
+    <h3>Minigimnasios para entrenar en casa</h3>
+    <p>Contamos con minigimnasios de marcas reconocidas como Everlast, Bodytone y Reebok, diseñados para adaptarse a espacios reducidos sin sacrificar funcionalidad. Incluyen estaciones multifunción para fuerza, cardio y tonificación. Disponibles desde precios accesibles, con envío a domicilio en todo Chile y garantía incluida para tu tranquilidad.</p>
+    </div>
+
+
+    <div class="icon-1">
+    <img src="imagenes/banca.png"">
+    <h3>Bancas y barras olimpicas</h3>
+    <p>Ofrecemos bancas planas, inclinadas y ajustables, junto con barras olímpicas de alta resistencia en acero templado, ideales para press de banca, sentadillas y levantamiento de peso. Disponibles en kits o por separado, con opciones para todos los niveles. Realizamos envíos a domicilio en toda Argentina, con descuentos especiales por la compra de equipos completos.</p>
+    </div>
+
+</section>
+
+<section class="blog container">
+
+    <div class="blog-1">
+    <img src="imagenes/lab nutrition.png" alt="">
+    <h3>Lab Nutrition</h3>
+    <p>“Potencia tu cuerpo, supera tus límites.” Fundada en Perú en el año 2005, Lab Nutrition es una marca especializada en nutrición deportiva que se enfoca en ofrecer calidad local a precios accesibles. Sus productos destacados incluyen proteínas concentradas, creatina, preentrenos, aminoácidos y quemadores de grasa, diseñados para apoyar el rendimiento físico de atletas y aficionados al fitness.
+
+Lab Nutrition se ha consolidado como una de las marcas líderes en el mercado peruano de suplementos, ofreciendo fórmulas adaptadas a las necesidades del deportista latinoamericano. Su compromiso con la calidad y el rendimiento ha ganado la confianza de miles de usuarios en gimnasios, competencias y entrenamientos personalizados.</p>
+    </div>
+
+    <div class="blog-1">
+    <img src="imagenes/hx nutrition.jpg" alt="">
+    <h3>Hx Nutrition</h3>
+    <p>“Transforma tu esfuerzo en resultados.” Fundada en Chile en el año 2012, HX Nutrition nació con el objetivo de ofrecer suplementos de alto rendimiento para atletas y entusiastas del entrenamiento físico. Entre sus productos más destacados se encuentran la proteína aislada, glutamina, BCAA, multivitamínicos y preentrenos, todos formulados para optimizar la recuperación y el desarrollo muscular.
+
+HX Nutrition se caracteriza por su constante innovación y presencia en eventos deportivos. Su enfoque está en brindar soluciones nutricionales certificadas y adaptadas a las exigencias del mercado chileno, posicionándose como una marca confiable para quienes buscan mejorar su rendimiento físico de forma segura y efectiva</p>
+    </div>
+    <div class="blog-1">
+    <img src="imagenes/optimum nutrititon.png" alt="">
+    <h3>Optimum Nutrition</h3>
+    <p>“True Strength.” Fundada en Estados Unidos en 1986, Optimum Nutrition es una marca reconocida mundialmente por su excelencia en suplementos nutricionales. Sus productos más emblemáticos incluyen Gold Standard Whey Protein, aminoácidos, creatina, caseína y barras proteicas, todos desarrollados con altos estándares de pureza y eficacia.
+
+Optimum Nutrition es sinónimo de calidad global. Presente en más de 90 países, sus suplementos son utilizados por atletas profesionales y aficionados que buscan resultados reales. Su proteína Gold Standard es una de las más vendidas en el mundo, y su compromiso con la ciencia y la transparencia los mantiene como referentes indiscutibles en el sector deportivo.</p>
+    </div>
+</section>
+
+<section class="video container">
+<h2>Alimentos ricos en proteínas</h2>
+<div class="video-wrapper">
+    <iframe id="videoPlayer" width="100%" height="400" src="https://www.youtube.com/embed/u4tQmNuJFmg?modestbranding=1&controls=1&fs=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+</div>
+</section>
+
+<section class="ofertas-inauguracion container">
+    <h2 class="ofertax">Ofertas por Inauguración</h2>
+    <div class="product-content">
+    <div class="product">
+    <img src="imagenes/proteinahidrolizada.jpg" alt="oferta">
+    <div class="product-txt">
+        <h3>Proteína Premium 2kg</h3>
+        <p>¡Solo por inauguración! Precio especial</p>
+        <p class="precio">S/ 199.00</p>
+        <a href="#" class="agregar-carrito btn-2" data-id="15">Agregar al carrito</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+<section class="formulario container">
+    <h2>Calculadora de proteína diaria</h2>
+    <form id="calculadoraProteina">
+    <input type="number" id="peso" placeholder="Peso en kg" required>
+    <input type="number" id="edad" placeholder="Edad" required>
+    <select id="objetivo" required>
+    <option value="">Selecciona tu objetivo</option>
+    <option value="mantenimiento">Mantenimiento</option>
+    <option value="definicion">Definicion</option>
+    <option value="masa">Ganar masa muscular</option>
+    </select>
+    <button type="submit" class="btn-1">Calcular</button>
+    </form>
+</section>
+
+
+
+<section class="formulario container">
+<h2>Para compras al por mayor contáctanos para descuentos</h2>
+<form id="formularioContacto" action="#" method="post">
+    <input type="text" name="nombre" placeholder="Nombres" required>
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+    <input type="tel" name="telefono" placeholder="Teléfono" required>
+    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+    <button type="submit" class="btn-1">Enviar</button>
+</form>
+</section>
+
+<section class="audio container">
+    <h2>Musica de motivación</h2>
+    <audio controls>
+    <source src="audios/sport-workout-gym-music-408129.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+    </audio>
+</section>
+
+<footer class="footer">
+    <div class="footer-content container">
+
+        <div class="link">
+            <h3>Información</h3>
+            <ul>
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Politica de cookies</a></li>
+                <li><a href="#">politica de privacidad</a></li>
+                <li><a href="#">Terminos y condiciones</a></li>
+            </ul>
+        </div>
+
+        <div class="link">
+            <h3>Extras</h3>
+            <ul>
+                <li><a href="#">Aminoacidos</a></li>
+                <li><a href="#">Grasas</a></li>
+                <li><a href="#">Carbohidratos</a></li>
+                <li><a href="#">Geles</a></li>
+            </ul>
+        </div>
+
+        <div class="contacto1">
+            <h3 class="web12">Datos de contacto</h3>
+            <ul>
+                <li><strong>Dirección:</strong>   Calle Programación Web N° 20</li>
+                <li><strong>Ciudad:</strong>   Lima</li>
+                <li><strong>Horario de atención:</strong>   De 9:00 a.m. a 5:00 p.m.</li>
+                <li><strong>Teléfono:</strong>   051-999999999</li>
+            </ul>
+        </div>
+
+        <div class="link">
+            <h3>Enlaces de interes</h3>
+            <ul>
+                <li><a href="#">Colabora con nosotros</a></li>
+                <li><a href="#">Entrenador personal</a></li>
+                <li><a href="#">Nutricionista</a></li>
+                <li><a href="#">Endocrinologo</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</footer>
+
+<div id="miModal" class="modal">
+    <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h2>¡Oferta especial!</h2>
+    <p>Obtén un 20% de descuento en tu primera compra</p>
+    </div>
+</div>
+
+<button id="abrirModal" class="btn-1">Ver Oferta</button>
+<button onclick="saludoInteractivo()" class="btn-1">Ver Oferta Exclusiva</button>
+
+    <script src="script.js"></script>
+    </body>
+</html>
