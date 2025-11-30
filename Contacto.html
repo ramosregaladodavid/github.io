@@ -43,7 +43,7 @@
         <h2>Envíanos un mensaje</h2>
         <p>Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
         
-        <form action="gracias.html" method="POST" class="contact-form">
+        <form id="contactoForm" class="contact-form" onsubmit="enviarFormulario(event)">
             <div class="form-group">
                 <label for="nombre">Nombre completo:</label>
                 <input type="text" id="nombre" name="nombre" required />
@@ -73,6 +73,14 @@
         </form>
     </section>
 
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            // Redirigir a gracias.html sin enviar datos
+            window.location.href = "gracias.html";
+        }
+    </script>
+
     <section class="formulario container">
         <h2>Información de contacto</h2>
         <div class="contact-info">
@@ -93,17 +101,6 @@
                 <p>Lunes a viernes: 9:00 a.m. - 5:00 p.m.</p>
                 <p>Sábados: 10:00 a.m. - 2:00 p.m.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="formulario container">
-        <h2>Redes sociales</h2>
-        <p>Síguenos en nuestras redes sociales para estar enterado de nuestras últimas promociones y actualizaciones:</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.twitter.com" target="_blank">Twitter</a>
-            <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a>
         </div>
     </section>
 

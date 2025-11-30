@@ -3,18 +3,29 @@ const carrito = document.getElementById('carrito');
 const elementos1 = document.getElementById('lista-1');
 const lista = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+const imgCarrito = document.getElementById('img-carrito');
 
-document.getElementById('img-carrito').addEventListener('click', () => {
-  const carrito = document.getElementById('carrito');
-  carrito.style.display = carrito.style.display === 'block' ? 'none' : 'block';
-});
+if (imgCarrito) {
+  imgCarrito.addEventListener('click', () => {
+    const carrito = document.getElementById('carrito');
+    carrito.style.display = carrito.style.display === 'block' ? 'none' : 'block';
+  });
+}
 
 function cargarEventListeners(){
-    elementos1.addEventListener('click', comprarElemento);
-    carrito.addEventListener('click', eliminarElemento);
-    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+    if (elementos1) {
+        elementos1.addEventListener('click', comprarElemento);
+    }
+    if (carrito) {
+        carrito.addEventListener('click', eliminarElemento);
+    }
+    if (vaciarCarritoBtn) {
+        vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+    }
     const ofertas = document.querySelector('.ofertas-inauguracion');
-    ofertas.addEventListener('click', comprarElemento);
+    if (ofertas) {
+        ofertas.addEventListener('click', comprarElemento);
+    }
 }
 
 function comprarElemento(e){
@@ -92,7 +103,10 @@ function vaciarCarrito() {
 }
 
 function actualizarCarrito(ultimoId) {
-  document.getElementById('carrito').style.display = 'block';
+  const carritoDiv = document.getElementById('carrito');
+  if (!carritoDiv || !lista) return; // Salir si no existen los elementos
+  
+  carritoDiv.style.display = 'block';
   lista.innerHTML = "";
   let total=0;
   const fragmento = document.createDocumentFragment();
@@ -123,7 +137,10 @@ function actualizarCarrito(ultimoId) {
   };
 
   lista.appendChild(fragmento);
-  document.getElementById('total-carrito').textContent = `Total: S/ ${total.toFixed(2)}`;
+  const totalCarritoEl = document.getElementById('total-carrito');
+  if (totalCarritoEl) {
+    totalCarritoEl.textContent = `Total: S/ ${total.toFixed(2)}`;
+  }
   animarCarrito();
 }
 
@@ -147,25 +164,41 @@ window.addEventListener("click", (e) => {
   }
 });
 
-alert("¡Bienvenido a Yelina Suplementos!");
+const primeraVisita = !localStorage.getItem("usuarioVisitado");
 
-const nombreUsuario = prompt("¿Cuál es tu nombre?");
-if (nombreUsuario) {
-  alert(`Hola, ${nombreUsuario}. ¡Gracias por visitarnos!`);
+if (primeraVisita) {
+  alert("¡Bienvenido a Yelina Suplementos!");
+  
+  const nombreUsuario = prompt("¿Cuál es tu nombre?");
+  if (nombreUsuario) {
+    alert(`Hola, ${nombreUsuario}. ¡Gracias por visitarnos!`);
+    localStorage.setItem("nombreUsuario", nombreUsuario);
+  }
+  
+  const deseaOferta = confirm("¿Deseas ver una oferta especial?\n\n🎉 20% DESCUENTO en tu PRIMERA COMPRA");
+  if (deseaOferta) {
+    document.getElementById("abrirModal").click();
+  } else {
+    alert("¡No hay problema! Puedes explorar nuestros productos.");
+  }
+  
+  localStorage.setItem("usuarioVisitado", "true");
+  localStorage.setItem("fechaPrimeraVisita", new Date().toLocaleString());
+} else {
+
+  const nombreGuardado = localStorage.getItem("nombreUsuario");
+  if (nombreGuardado) {
+    alert(`¡Bienvenido de vuelta, ${nombreGuardado}! 👋`);
+  }
 }
 
-const deseaOferta = confirm("¿Deseas ver una oferta especial?");
-if (deseaOferta) {
-  document.getElementById("abrirModal").click();
-  alert("¡No hay problema! Puedes explorar nuestros productos.");
-}
 function saludoInteractivo() {
   alert("¡Bienvenido a Yelina Suplementos!");
   const nombreUsuario = prompt("¿Cuál es tu nombre?");
   if (nombreUsuario) {
     alert(`Hola, ${nombreUsuario}. ¡Gracias por visitarnos!`);
   }
-  const deseaOferta = confirm("¿Deseas ver una oferta especial?");
+  const deseaOferta = confirm("¿Deseas ver una oferta especial?\n\n🎉 20% DESCUENTO en tu PRIMERA COMPRA CODIGO: YELINA");
   if (deseaOferta) {
     document.getElementById("abrirModal").click();
   } else {
@@ -300,15 +333,13 @@ window.addEventListener("message", (event) => {
   }
 });
 
-// ========== REPRODUCTOR DE VIDEO ALTERNATIVO ==========
 document.addEventListener('DOMContentLoaded', function() {
     const videoPlayer = document.getElementById('videoPlayer');
     
     if (videoPlayer) {
-        // Intentar usar un servicio proxy para descargar el video de YouTube
-        const videoId = 'K7dOcwMUy2M';
+                const videoId = 'K7dOcwMUy2M';
         
-        // Usar noCookie embed como alternativa
+        
         const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1`;
         
         // Cambiar a iframe sin cookie para privacidad
@@ -322,19 +353,18 @@ document.addEventListener('DOMContentLoaded', function() {
         iframe.style.borderRadius = '8px';
         iframe.allowFullscreen = true;
         
-        // Reemplazar el video con el iframe
+        
         videoPlayer.parentNode.replaceChild(iframe, videoPlayer);
     }
 });
 
 
-// ========== CARRUSEL DE OFERTAS ==========
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.getElementById('ofertTrack');
     const prevBtn = document.getElementById('ofertPrev');
     const nextBtn = document.getElementById('ofertNext');
     
-    if (!track || !prevBtn || !nextBtn) return; // Si no existe el carrusel, salir
+    if (!track || !prevBtn || !nextBtn) return; // 
     
     let currentIndex = 0;
     const items = document.querySelectorAll('.ofert-1');
@@ -342,16 +372,16 @@ document.addEventListener('DOMContentLoaded', function() {
     let autoScrollInterval;
     let totalItems = items.length;
     
-    // Crear clones de items para efecto infinito
+    
     items.forEach(item => {
         const clone = item.cloneNode(true);
         track.appendChild(clone);
     });
     
-    // Obtener items actualizado (original + clones)
+    
     const allItems = document.querySelectorAll('.ofert-1');
     
-    // Función para actualizar items por vista según el ancho
+    
     function updateItemsPerView() {
         const width = window.innerWidth;
         if (width <= 480) {
@@ -365,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Función para mover el carrusel
+    
     function moveCarousel(direction) {
         updateItemsPerView();
         
@@ -377,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         updateTrackPosition();
         
-        // Reiniciar al llegar al final para efecto infinito
+        
         if (currentIndex >= totalItems) {
             setTimeout(() => {
                 track.style.transition = 'none';
@@ -399,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Función para actualizar posición del track
     function updateTrackPosition() {
         updateItemsPerView();
         const itemWidth = track.offsetWidth / itemsPerView;
@@ -407,12 +436,10 @@ document.addEventListener('DOMContentLoaded', function() {
         track.style.transform = `translateX(${offset}px)`;
     }
     
-    // Función para auto-scroll
     function autoScroll() {
         moveCarousel('next');
     }
     
-    // Event listeners para botones
     nextBtn.addEventListener('click', () => {
         clearInterval(autoScrollInterval);
         moveCarousel('next');
@@ -424,14 +451,12 @@ document.addEventListener('DOMContentLoaded', function() {
         moveCarousel('prev');
         startAutoScroll();
     });
-    
-    // Iniciar auto-scroll
+  
     function startAutoScroll() {
-        autoScrollInterval = setInterval(autoScroll, 5000); // Cambiar cada 5 segundos
+        autoScrollInterval = setInterval(autoScroll, 5000);
     }
     
-    // Pausar auto-scroll al pasar mouse
-    track.addEventListener('mouseenter', () => {
+      track.addEventListener('mouseenter', () => {
         clearInterval(autoScrollInterval);
     });
     
@@ -439,12 +464,11 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoScroll();
     });
     
-    // Ajustar al redimensionar la ventana
     window.addEventListener('resize', () => {
         updateTrackPosition();
     });
     
-    // Inicialización
+  
     updateItemsPerView();
     updateTrackPosition();
     startAutoScroll();

@@ -23,7 +23,6 @@
         <ul>
             <li><a href="Promociones.html">Promociones</a></li>
             <li><a href="Nosotros.html">Nosotros</a></li>
-            <li><a href="Productos.html">Productos</a></li>
             <li><a href="Contacto.html">Contacto</a></li>
         </ul>
     </nav>
@@ -76,33 +75,14 @@
 <section class="ofertas-inauguracion container">
     <h2 class="ofertax">Ofertas por Inauguración</h2>
     <div class="product-content">
-        <div class="product">
-            <img src="imagenes/proteinahidrolizada.jpg" alt="oferta-proteína-premium">
-            <div class="product-txt">
-                <h3>Proteína Premium 2kg</h3>
-                <p>¡Solo por inauguración! Precio especial con 30% de descuento</p>
-                <p class="precio">S/ 199.00 <span style="text-decoration: line-through;">S/ 280.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="15">Agregar al carrito</a>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="imagenes/concentrada333.png" alt="oferta-proteína-concentrada">
-            <div class="product-txt">
-                <h3>Proteína Whey Concentrada 1kg</h3>
-                <p>Oferta especial para nuevos clientes - 25% descuento</p>
-                <p class="precio">S/ 97.50 <span style="text-decoration: line-through;">S/ 130.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
-            </div>
-        </div>
-
+        
         <div class="product">
             <img src="imagenes/creatina2.png" alt="oferta-creatina">
             <div class="product-txt">
                 <h3>Creatina Monohidratada 300g</h3>
-                <p>Compra 2 o más y obtén 20% de descuento adicional</p>
-                <p class="precio">S/ 72.00 <span style="text-decoration: line-through;">S/ 90.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                <p>Promocion: Compra más de 2 obtén 25% de descuento adicional</p>
+                <p><span class="precio">S/ 72.00</span> <span style="text-decoration: line-through;">S/ 90.00</span></p>
+                <button class="agregar-carrito btn-2" data-id="4" onclick="leerDatosElemento(this.parentElement.parentElement)">Agregar al carrito</button>
             </div>
         </div>
 
@@ -110,9 +90,9 @@
             <img src="imagenes/glutamina2_.jpg" alt="oferta-glutamina">
             <div class="product-txt">
                 <h3>Glutamina Micronizada 300g</h3>
-                <p>Promoción de fin de mes - Lleva 2 y paga 3</p>
-                <p class="precio">S/ 73.33 <span style="text-decoration: line-through;">S/ 110.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+                <p>Promoción: Lleva 2 y paga 3</p>
+                <p><span class="precio">S/ 73.33</span> <span style="text-decoration: line-through;">S/ 110.00</span></p>
+                <button class="agregar-carrito btn-2" data-id="5" onclick="leerDatosElemento(this.parentElement.parentElement)">Agregar al carrito</button>
             </div>
         </div>
 
@@ -120,9 +100,9 @@
             <img src="imagenes/preentreno2.jpeg" alt="oferta-preentreno">
             <div class="product-txt">
                 <h3>Preentreno Energizante 300g</h3>
-                <p>Oferta flash - Solo este mes con 15% de descuento</p>
-                <p class="precio">S/ 80.75 <span style="text-decoration: line-through;">S/ 95.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                <p>Promocion: Solo este mes con 15% de descuento</p>
+                <p><span class="precio">S/ 80.75</span> <span style="text-decoration: line-through;">S/ 95.00</span></p>
+                <button class="agregar-carrito btn-2" data-id="6" onclick="leerDatosElemento(this.parentElement.parentElement)">Agregar al carrito</button>
             </div>
         </div>
 
@@ -130,16 +110,16 @@
             <img src="imagenes/colageno2_.jpg" alt="oferta-colágeno">
             <div class="product-txt">
                 <h3>Colágeno Hidrolizado 300g</h3>
-                <p>Compra combo: colágeno + vitaminas y obtén 35% de descuento</p>
-                <p class="precio">S/ 61.75 <span style="text-decoration: line-through;">S/ 95.00</span></p>
-                <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+                <p>Promocion: Colágeno + vitaminas y obtén 35% de descuento</p>
+                <p><span class="precio">S/ 61.75</span> <span style="text-decoration: line-through;">S/ 95.00</span></p>
+                <button class="agregar-carrito btn-2" data-id="10" onclick="leerDatosElemento(this.parentElement.parentElement)">Agregar al carrito</button>
             </div>
         </div>
     </div>
 </section>
 
 <section class="formulario container">
-    <h2>Promociones por Cantidad</h2>
+    <h2>Promociones por Cantidad DE PRODUCTOS</h2>
     <p>Aprovecha nuestras promociones especiales por volumen:</p>
     <div class="promo-info">
         <div class="promo-item">
@@ -156,57 +136,9 @@
         </div>
         <div class="promo-item">
             <h3>Compra al por mayor</h3>
-            <p>Contacta con nuestro equipo para <strong>cotizaciones especiales</strong></p>
+            <p><a href="Contacto.html" class="btn-2">Contacta con nuestro equipo</strong></a></p>
         </div>
     </div>
-</section>
-
-<section class="formulario container">
-    <h2>Ofertas Destacadas Este Mes</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-        <div style="border: 2px solid #ff6b6b; padding: 20px; border-radius: 8px;">
-            <h3 style="color: #ff6b6b;">🔥 Oferta Caliente</h3>
-            <p><strong>Proteína Aislada 1kg</strong></p>
-            <p>Antes: S/ 180.00 → Ahora: <strong>S/ 99.00</strong></p>
-            <p style="color: #ff6b6b; font-weight: bold;">¡45% de descuento!</p>
-        </div>
-
-        <div style="border: 2px solid #ffd700; padding: 20px; border-radius: 8px;">
-            <h3 style="color: #ffd700;">⭐ Premium</h3>
-            <p><strong>Multivitamínico 60 cápsulas</strong></p>
-            <p>Antes: S/ 60.00 → Ahora: <strong>S/ 39.99</strong></p>
-            <p style="color: #ffd700; font-weight: bold;">¡33% de descuento!</p>
-        </div>
-
-        <div style="border: 2px solid #51cf66; padding: 20px; border-radius: 8px;">
-            <h3 style="color: #51cf66;">✅ Superventas</h3>
-            <p><strong>Omega 3 90 cápsulas</strong></p>
-            <p>Antes: S/ 80.00 → Ahora: <strong>S/ 49.99</strong></p>
-            <p style="color: #51cf66; font-weight: bold;">¡38% de descuento!</p>
-        </div>
-
-        <div style="border: 2px solid #4dabf7; padding: 20px; border-radius: 8px;">
-            <h3 style="color: #4dabf7;">💪 Fitness</h3>
-            <p><strong>BCAA 2:1:1 360g</strong></p>
-            <p>Antes: S/ 95.00 → Ahora: <strong>S/ 57.00</strong></p>
-            <p style="color: #4dabf7; font-weight: bold;">¡40% de descuento!</p>
-        </div>
-    </div>
-</section>
-
-<section class="formulario container">
-    <h2>Envío Gratis en Compras Mayores a S/ 200</h2>
-    <p>Envío a todo el Perú. Aprovecha esta oferta limitada para recibir tus productos sin costo adicional.</p>
-    <p><strong>Válido hasta fin de mes</strong></p>
-</section>
-
-<section class="formulario container">
-    <h2>Suscríbete para no perderte nuestras promociones</h2>
-    <form id="formularioSuscripcion" action="#" method="post">
-        <input type="email" name="correo" placeholder="Ingresa tu correo electrónico" required>
-        <button type="submit" class="btn-1">Suscribirse</button>
-    </form>
-    <p>Recibe ofertas exclusivas, descuentos especiales y actualizaciones de nuevos productos directamente en tu correo.</p>
 </section>
 
 <footer class="footer">
